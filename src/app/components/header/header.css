@@ -1,125 +1,118 @@
-/* Header general */
 .header {
   position: relative;
-  background: rgba(4, 16, 37, 0.9); /* fondo semi-transparente para resaltar */
-  color: white;
-  padding: 1rem;
-  text-align: center;
-  overflow-x: hidden;
+  margin-bottom: 2rem;
+  padding: 1.5rem 1rem 0.75rem;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(125, 211, 252, 0.18);
+  border-radius: 26px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(12px);
 }
 
-/* Header top */
 .header-top {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
   position: relative;
-  z-index: 5;
 }
 
-/* Imagen tipo carnet */
 .profile-pic {
-  width: 250px;
-  height: 250px;
+  width: clamp(180px, 22vw, 260px);
+  height: clamp(180px, 22vw, 260px);
   object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid #00fff7;
+  border-radius: 24px;
+  border: 2px solid rgba(125, 211, 252, 0.6);
+  box-shadow: 0 18px 30px rgba(34, 211, 238, 0.18);
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .profile-pic:hover {
-  transform: scale(1.05);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 24px 40px rgba(167, 139, 250, 0.18);
 }
 
-/* Información */
 .header-info {
+  flex: 1 1 340px;
   text-align: center;
-  flex: 1 1 200px;
 }
 
 .header-info h1 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: clamp(1.6rem, 3vw, 3rem);
+  letter-spacing: -0.04em;
 }
 
 .header-info h2 {
-  margin: 0;
+  margin: 0.5rem 0 0;
   font-size: 1rem;
-  color: #00fff7;
+  color: #a5f3fc;
+  font-weight: 600;
 }
 
-/* Menú overlay oculto por defecto */
-/* Menú overlay */
 nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(30, 41, 59, 0.95);
-  backdrop-filter: blur(10px);
+  inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1.75rem;
+  background: rgba(2, 6, 23, 0.92);
+  backdrop-filter: blur(12px);
   transform: translateY(-100%);
   opacity: 0;
   pointer-events: none;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  z-index: 999;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  z-index: 1000;
 }
 
-/* Menú abierto */
 nav.open {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Links futuristas */
 nav a {
-  color: #00fff7;
-  font-size: 2rem;
-  font-weight: bold;
-  text-decoration: none;
-  letter-spacing: 2px;
-  transition: color 0.3s, transform 0.3s;
+  color: #dbeafe;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 nav a:hover {
-  color: #ff00ff;
-  transform: scale(1.2);
+  color: #a78bfa;
+  transform: translateX(4px);
 }
 
-/* Hamburger futurista */
 .hamburger {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  z-index: 1000;
-  width: 35px;
-  height: 30px;
+  z-index: 1100;
+  width: 42px;
+  height: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  cursor: pointer;
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .hamburger span {
   display: block;
   height: 4px;
-  background: #00fff7;
-  border-radius: 2px;
-  transition: all 0.4s ease;
+  width: 100%;
+  border-radius: 999px;
+  background: #a5f3fc;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* Animación a X */
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translate(6px, 6px);
 }
@@ -129,69 +122,54 @@ nav a:hover {
 }
 
 .hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Modal */
 .modal {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
+  inset: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
-  z-index: 1000;
+  justify-content: center;
+  background: rgba(2, 6, 23, 0.82);
+  z-index: 1200;
 }
 
 .modal-content {
   position: relative;
-  background: #0f172a;
+  background: rgba(15, 23, 42, 0.96);
   padding: 1rem;
-  border-radius: 12px;
-  z-index: 1001;
+  border-radius: 22px;
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  box-shadow: 0 28px 60px rgba(2, 6, 23, 0.7);
 }
 
 .modal-background {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  z-index: 1000;
+  inset: 0;
 }
 
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: #ff1744;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 34px;
+  height: 34px;
   border: none;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
 }
+
 .modal-img {
   max-width: 90vw;
-  max-height: 90vh;
-  border-radius: 12px;
-  border: 3px solid #00fff7;
+  max-height: 85vh;
+  border-radius: 16px;
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
-.modal-img:hover {
-  transform: scale(1.05);
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Desktop: menú siempre visible */
 @media (min-width: 1025px) {
   nav {
     position: static;
@@ -199,9 +177,9 @@ nav a:hover {
     opacity: 1;
     pointer-events: auto;
     flex-direction: row;
-    gap: 1rem;
-    justify-content: center;
+    gap: 1.2rem;
     height: auto;
+    margin-top: 1.25rem;
     background: transparent;
     backdrop-filter: none;
   }
@@ -211,34 +189,27 @@ nav a:hover {
   }
 
   nav a {
-    font-size: 1rem;
-    color: #00fff7;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    color: #cbd5e1;
   }
 }
 
 .lang-switch {
   display: flex;
-  gap: 0.5rem;
-  margin-left: auto;
+  gap: 0.45rem;
 }
 
 .lang-switch button {
+  border: 1px solid rgba(125, 211, 252, 0.35);
   background: transparent;
-  border: 2px solid #00fff7;
-  color: #00fff7;
-  padding: 0.3rem 0.7rem;
-  font-weight: bold;
+  color: #dbeafe;
+  border-radius: 999px;
+  padding: 0.4rem 0.7rem;
   cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-
-.lang-switch button:hover {
-  background: #00fff7;
-  color: #0f172a;
 }
 
 .lang-switch button.active {
-  background: #00fff7;
-  color: #0f172a;
+  background: rgba(125, 211, 252, 0.12);
+  color: #a5f3fc;
 }

@@ -1,25 +1,37 @@
-<app-header></app-header>
+<div class="portfolio-shell">
+  <app-header></app-header>
 
-<main>
-  <app-about></app-about>
-  <app-experience></app-experience>
-  <app-education></app-education>
-  <app-skills></app-skills>
-  <app-contact></app-contact>
+  <main class="portfolio-main">
+    <section class="hero-intro">
+      <span class="eyebrow">Desarrollador Full Stack · Angular · .NET</span>
+      <h1>Diseño soluciones digitales con impacto real.</h1>
+      <p>
+        Construyo experiencias web robustas, rápidas y escalables para negocios que necesitan
+        calidad, claridad y resultados medibles.
+      </p>
+    </section>
+
+    <app-about></app-about>
+    <app-experience></app-experience>
+    <app-education></app-education>
+    <app-skills></app-skills>
+    <app-contact></app-contact>
+  </main>
+
   <div class="views-counter">
-  👁️ {{ views() }} visitas
- </div>
-<div class="floating-buttons">
-  <a href="#header" title="Inicio"><i class="fas fa-home"></i></a>
-  <a href="#about" title="Sobre mí"><i class="fas fa-user"></i></a>
-  <a href="#experience" title="Experiencia"><i class="fas fa-briefcase"></i></a>
-  <a href="#education" title="Educación"><i class="fas fa-graduation-cap"></i></a>
-  <a href="#skills" title="Skills"><i class="fas fa-cogs"></i></a>
-  <a href="#contact" title="Contacto"><i class="fas fa-phone-alt"></i></a>
+    👁️ {{ views() }} visitas
+  </div>
+
+  <div class="floating-buttons">
+    <a href="#header" title="Inicio"><i class="fas fa-home"></i></a>
+    <a href="#about" title="Sobre mí"><i class="fas fa-user"></i></a>
+    <a href="#experience" title="Experiencia"><i class="fas fa-briefcase"></i></a>
+    <a href="#education" title="Educación"><i class="fas fa-graduation-cap"></i></a>
+    <a href="#skills" title="Skills"><i class="fas fa-cogs"></i></a>
+    <a href="#contact" title="Contacto"><i class="fas fa-phone-alt"></i></a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 {{ title() }}</p>
+  </footer>
 </div>
-
-</main>
-
-<footer>
-  <p>&copy; 2025 {{ title() }}</p>
-</footer>

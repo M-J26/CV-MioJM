@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { provideTransloco } from '@ngneat/transloco';
 import { Header } from './header';
+import { TranslocoHttpLoader } from '../../transloco-loader';
 
 describe('HeaderComponent', () => {
   let component: Header;
@@ -7,7 +10,19 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Header] // standalone component import
+      imports: [Header],
+      providers: [
+        provideHttpClient(),
+        provideTransloco({
+          config: {
+            availableLangs: ['es', 'en'],
+            defaultLang: 'es',
+            reRenderOnLangChange: true,
+            prodMode: false,
+          },
+          loader: TranslocoHttpLoader,
+        }),
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(Header);
@@ -18,5 +33,4 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
 });

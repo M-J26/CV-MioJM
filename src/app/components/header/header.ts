@@ -34,14 +34,14 @@
 // }
 
 import { Component, signal, inject } from '@angular/core';
-import { TranslocoService, TranslocoPipe } from '@ngneat/transloco';
+import { TranslocoService } from '@ngneat/transloco';
 import { PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [TranslocoPipe],
+  imports: [],
   templateUrl: './header.html',
   styleUrls: ['./header.css']
 })
