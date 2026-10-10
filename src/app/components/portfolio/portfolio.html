@@ -1,0 +1,22 @@
+<section id="portfolio" class="portfolio-section">
+  <div class="section-heading">
+    <span class="eyebrow">Portfolio</span>
+    <h2>Proyectos seleccionados</h2>
+  </div>
+
+  <div class="portfolio-grid">
+    <article class="project-card" *ngFor="let project of projects()" [style.--card-accent]="project.accent">
+      <div class="project-topbar">
+        <span class="project-tag">{{ project.category }}</span>
+        <a [href]="project.url" target="_blank" rel="noopener" aria-label="Ver proyecto">↗</a>
+      </div>
+
+      <h3>{{ project.title }}</h3>
+      <p>{{ project.summary }}</p>
+
+      <div class="project-stack">
+        <span *ngFor="let tech of project.stack">{{ tech }}</span>
+      </div>
+    </article>
+  </div>
+</section>

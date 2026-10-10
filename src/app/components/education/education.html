@@ -1,15 +1,19 @@
 <section id="education" class="education-section">
-  <h2>Educación</h2>
+  <div class="section-heading">
+    <span class="eyebrow">Educación</span>
+    <h2>Formación y aprendizaje continuo</h2>
+  </div>
 
-  <div class="timeline">
-    <div class="timeline-item" *ngFor="let edu of education()">
-      <div class="timeline-marker"></div>
-      <div class="timeline-content">
-        <span class="timeline-date">{{ edu.date }}</span>
-        <h3>{{ edu.title }}</h3>
-        <h4>{{ edu.institution }}</h4>
-        <p *ngIf="edu.details">{{ edu.details }}</p>
+  <div class="education-grid">
+    <article class="education-card" *ngFor="let edu of education()">
+      <div class="education-header">
+        <span class="education-date">{{ edu.date }}</span>
+        <span class="education-pill">Certificado</span>
       </div>
-    </div>
+
+      <h3>{{ edu.title }}</h3>
+      <h4>{{ edu.institution }}</h4>
+      <p *ngIf="edu.details">{{ edu.details }}</p>
+    </article>
   </div>
 </section>

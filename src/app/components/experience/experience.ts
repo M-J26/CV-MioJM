@@ -22,6 +22,22 @@ export class Experience {
   protected readonly showDetails = signal(true);
 protected readonly experiences = signal<experiencia[]>([
   {
+      date: '09/2026 ',
+      role: 'Asesor de Desarrollo de Software',
+      company: 'Presidencia de la republica del Ecuador',
+      location: 'Quito',
+      description: [
+        'Diseño e implementación de aplicaciones empresariales Full Stack utilizando .NET Core, Java y Angular.',        
+        'Gestión de código y 􀃮ujos de trabajo con Git y GitLab, asegurando calidad y trazabilidad.',
+        'Optimización de consultas  con sitemas spring boot y React, mejorando tiempos de respuesta y estabilidad del sistema.',
+        'Crecaio de aplicaciones web y móviles para la gestión de procesos internos del gobierno, mejorando la eficiencia y la transparencia.',
+        'Implementación de servicios backend en spring boot y  Plsql para garantizar integridad y trazabilidad de los datos.',
+        'Aplicación de arquitectura clear para mejorar mantenibilidad y escalabilidad.',
+        'Optimización de bases de datos Oracle 12.5 para manejo de grandes volúmenes de información.'
+      ],
+      technologies: [ 'Spring Boot', 'CLEAR', 'Oracle', 'React', 'HTML', 'CSS', 'Java', 'Git', 'GitLab']
+    }, 
+  {
       date: '09/2024 - 02/2026',
       role: 'Desarrollador Especialista',
       company: 'PROCONTY',

@@ -1,92 +1,76 @@
 .skills-section {
-  max-width: 1000px;
-  margin: 3rem auto;
-  text-align: center;
-  color: #f1f5f9;
+  max-width: 1180px;
+  margin: 2rem auto 0;
 }
 
-.skills-section h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #00bcd4;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
+.section-heading {
+  margin-bottom: 1.5rem;
 }
 
-.carousel {
-  position: relative;
+.section-heading h2 {
+  margin: 0.8rem 0 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.05em;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.skill-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-}
-
-.carousel-track-wrapper {
-  overflow: hidden;
-  width: 100%;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.carousel-item {
-  flex: 0 0 160px;
-  margin: 0 12px;
+  gap: 0.8rem;
+  min-height: 170px;
+  padding: 1rem 0.8rem;
+  border-radius: 22px;
+  background: rgba(15, 23, 42, 0.76);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.18);
   text-align: center;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.carousel-item img {
-  width: 140px;
-  height: 140px;
+.skill-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(125, 211, 252, 0.28);
+}
+
+.skill-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.skill-card img {
+  width: 42px;
+  height: 42px;
   object-fit: contain;
-  margin-bottom: 0.5rem;
-  border-radius: 12px;
-  transition: transform 0.3s;
+  filter: drop-shadow(0 10px 16px rgba(15, 23, 42, 0.28));
 }
 
-.carousel-item img:hover {
-  transform: scale(1.1);
+.skill-card span {
+  color: #e2e8f0;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
-/* Botones */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #00bcd4;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0.4rem 0.8rem;
-  border-radius: 50%;
-  z-index: 10;
-  transition: background 0.3s;
-}
-
-.carousel-btn:hover {
-  background: #ff1744;
-}
-
-.carousel-btn.left {
-  left: 0.5rem;
-}
-
-.carousel-btn.right {
-  right: 0.5rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .carousel-item {
-    flex: 0 0 120px;
+@media (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+}
 
-  .carousel-item img {
-    width: 100px;
-    height: 100px;
+@media (max-width: 640px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

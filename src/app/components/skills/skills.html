@@ -1,20 +1,15 @@
 <section id="skills" class="skills-section">
-  <h2>Mis habilidades</h2>
+  <div class="section-heading">
+    <span class="eyebrow">Stack</span>
+    <h2>Habilidades y tecnologías</h2>
+  </div>
 
-  <div class="carousel">
-    <button class="carousel-btn left" (click)="prev()">&#10094;</button>
-
-    <div class="carousel-track-wrapper">
-      <div class="carousel-track" [style.transform]="trackTranslate()">
-        <div class="carousel-item" *ngFor="let skill of skills()">
-          <a [href]="skill.url" target="_blank" rel="noopener">
-            <img [src]="skill.image" [alt]="skill.name" />
-          </a>
-          <p>{{ skill.name }}</p>
-        </div>
-      </div>
+  <div class="skills-grid">
+    <div class="skill-card" *ngFor="let skill of skills()">
+      <a [href]="skill.url" target="_blank" rel="noopener" aria-label="Ver documentación de {{ skill.name }}">
+        <img [src]="skill.image" [alt]="skill.name" />
+      </a>
+      <span>{{ skill.name }}</span>
     </div>
-
-    <button class="carousel-btn right" (click)="next()">&#10095;</button>
   </div>
 </section>

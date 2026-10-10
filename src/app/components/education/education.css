@@ -1,91 +1,98 @@
 .education-section {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 1rem;
-  color: #f1f5f9;
+  max-width: 1180px;
+  margin: 2rem auto 0;
 }
 
-.education-section h2 {
-  text-align: center;
-  color: #38bdf8;
-  font-size: 2rem;
-  margin-bottom: 2rem;
+.section-heading {
+  margin-bottom: 1.5rem;
 }
 
-.timeline {
+.section-heading h2 {
+  margin: 0.8rem 0 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.05em;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+.education-card {
   position: relative;
-  margin-left: 2rem;
-  border-left: 3px solid #00fff7;
-  padding-left: 1.5rem;
+  padding: 1.4rem 1.3rem 1.2rem;
+  border-radius: 22px;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.18);
 }
 
-.timeline-item {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.timeline-marker {
+.education-card::before {
+  content: '';
   position: absolute;
-  left: -12px;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  background: #ff0000;
-  border: 3px solid #44aaee;
-  border-radius: 50%;
-  transition: transform 0.3s;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 22px 22px 0 0;
+  background: linear-gradient(90deg, #7dd3fc 0%, #34d399 100%);
 }
 
-.timeline-item:hover .timeline-marker {
-  transform: scale(1.2);
+.education-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
 }
 
-.timeline-content {
-  background: rgba(4, 16, 37, 0.9); /* fondo semi-transparente para resaltar */
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-  transition: transform 0.3s;
+.education-date {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(125, 211, 252, 0.08);
+  border: 1px solid rgba(125, 211, 252, 0.15);
+  color: #a5f3fc;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  font-weight: 700;
 }
 
-.timeline-item:hover .timeline-content {
-  transform: translateX(5px);
+.education-pill {
+  display: inline-flex;
+  padding: 0.38rem 0.62rem;
+  border-radius: 999px;
+  color: #dbeafe;
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.16);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-.timeline-date {
-  font-size: 0.9rem;
-  color: #38bdf8;
-  font-weight: bold;
+.education-card h3 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 1.35rem;
+  letter-spacing: -0.04em;
 }
 
-.timeline-content h3 {
-  margin: 0.3rem 0;
-  color: #00fff7;
-}
-
-.timeline-content h4 {
-  margin: 0.3rem 0;
-  color: #1eff00;
+.education-card h4 {
+  margin: 0.45rem 0 0.8rem;
+  color: #a5f3fc;
   font-size: 1rem;
+  font-weight: 600;
 }
 
-.timeline-content p {
-  margin: 0.5rem 0 0 0;
-  font-size: 0.9rem;
-  color: #f1f5f9;
+.education-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .timeline {
-    margin-left: 1rem;
-    padding-left: 1rem;
-    border-left: 2px solid #00fff7;
-  }
-
-  .timeline-marker {
-    width: 16px;
-    height: 16px;
-    left: -9px;
+  .education-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,40 +1,91 @@
 .about-section {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: rgba(4, 16, 37, 0.9); /* fondo semi-transparente para resaltar */
-  border-radius: 12px;
-  color: #f1f5f9;
+  max-width: 1180px;
+  margin: 2rem auto 0;
+}
+
+.section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.section-heading h2 {
+  margin: 0.8rem 0 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.05em;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.15rem;
+  margin-bottom: 1.15rem;
+}
+
+.about-copy,
+.about-panel,
+.languages-panel {
+  padding: 1.3rem 1.25rem;
+  border-radius: 22px;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.18);
+}
+
+.about-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-copy p {
+  margin: 0;
+  color: var(--muted);
   line-height: 1.8;
-  text-align: justify;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  font-size: 1.04rem;
 }
 
-.about-section h2 {
-  text-align: center;
-  color: #38bdf8;
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
+.about-panel h3,
+.languages-panel h3 {
+  margin: 0 0 0.9rem;
+  font-size: 1.15rem;
+  color: #a5f3fc;
 }
 
-.about-section h3 {
-  color: #00fff7;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
+.about-panel ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  line-height: 1.8;
 }
 
-.about-section p {
-  margin-bottom: 1.5rem;
+.languages-panel {
+  margin-top: 0.2rem;
 }
 
-.about-section ul {
-  list-style: disc;
-  margin-left: 1.5rem;
-  margin-bottom: 1.5rem;
+.language-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
 }
 
-.about-section li {
-  margin-bottom: 0.8rem;
-  line-height: 1.6;
+.language-list span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.52rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(148, 163, 184, 0.05);
+  color: #dbeafe;
+  font-weight: 600;
 }
+
+.language-list strong {
+  color: #a5f3fc;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

@@ -1,21 +1,32 @@
 <section id="contact" class="contact-section">
-  <h2>Contacto</h2>
-
-  <div class="contact-info">
-    <p><strong>📞 Teléfono Ecuador: </strong> <a [href]="'tel: ' + phoneEC">{{ phoneEC }}</a></p>
-    <p><strong>📞 Teléfono Argentina: </strong> <a [href]="'tel: ' + phoneArg">{{ phoneArg }}</a></p>
-    <p><strong>📧 Correo:</strong> <a [href]="'mailto: ' + email">{{ email }}</a></p>
+  <div class="section-heading">
+    <span class="eyebrow">Contacto</span>
+    <h2>Hablemos de tu próximo proyecto</h2>
   </div>
 
-  <div class="social-links">
-    <a [href]="whatsappLink" target="_blank" aria-label="WhatsApp">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
-    </a>
-    <a [href]="linkedin" target="_blank" aria-label="LinkedIn">
-      <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" />
-    </a>
-    <a [href]="github" target="_blank" aria-label="GitHub">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" />
-    </a>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Información</h3>
+      <ul>
+        <li><span>Teléfono Ecuador</span><a [href]="'tel:' + phoneEC">{{ phoneEC }}</a></li>
+        <li><span>Teléfono Argentina</span><a [href]="'tel:' + phoneArg">{{ phoneArg }}</a></li>
+        <li><span>Correo</span><a [href]="'mailto:' + email">{{ email }}</a></li>
+      </ul>
+    </div>
+
+    <div class="contact-card social-card">
+      <h3>Redes</h3>
+      <div class="social-links">
+        <a [href]="whatsappLink" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+        </a>
+        <a [href]="linkedin" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" />
+        </a>
+        <a [href]="github" target="_blank" rel="noopener" aria-label="GitHub">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" />
+        </a>
+      </div>
+    </div>
   </div>
 </section>

@@ -3,16 +3,54 @@
 
   <main class="portfolio-main">
     <section class="hero-intro">
-      <span class="eyebrow">Desarrollador Full Stack · Angular · .NET</span>
-      <h1>Diseño soluciones digitales con impacto real.</h1>
-      <p>
-        Construyo experiencias web robustas, rápidas y escalables para negocios que necesitan
-        calidad, claridad y resultados medibles.
-      </p>
+      <div class="hero-content">
+        <div class="hero-badges">
+          <span class="eyebrow">Desarrollador Full Stack · Angular · .NET</span>
+          <span class="availability-badge">Disponible para proyectos</span>
+        </div>
+
+        <h1>Diseño y construyo software que escala con negocio real.</h1>
+        <p>
+          Trabajo en soluciones web robustas, fáciles de mantener y con impacto operativo. Me
+          enfoco en arquitectura limpia, experiencia de usuario clara y resultados medibles.
+        </p>
+
+        <div class="hero-actions">
+          <a class="primary-button" href="#contact">Hablemos</a>
+          <a class="secondary-button" href="#portfolio">Ver portafolio</a>
+        </div>
+
+        <ul class="hero-tags" aria-label="Tecnologías principales">
+          <li>Angular</li>
+          <li>.NET</li>
+          <li>Spring Boot</li>
+          <li>React</li>
+          <li>Oracle</li>
+          <li>PL/SQL</li>
+        </ul>
+      </div>
+
+      <div class="hero-terminal" aria-label="Ficha técnica del perfil">
+        <div class="terminal-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+
+        <div class="terminal-body">
+          <div class="code-line"><span class="token comment">// profile</span></div>
+          <div class="code-line"><span class="token key">role</span>: <span class="token string">"Senior Full Stack Developer"</span></div>
+          <div class="code-line"><span class="token key">stack</span>: [<span class="token string">"Angular"</span>, <span class="token string">"C#"</span>, <span class="token string">"Java"</span>]</div>
+          <div class="code-line"><span class="token key">focus</span>: <span class="token string">"Arquitectura, UX y escalabilidad"</span></div>
+          <div class="code-line"><span class="token key">experience</span>: <span class="token number">8+</span> years</div>
+          <div class="code-line"><span class="token key">status</span>: <span class="token success">"Open to work"</span></div>
+        </div>
+      </div>
     </section>
 
     <app-about></app-about>
     <app-experience></app-experience>
+    <app-portfolio></app-portfolio>
     <app-education></app-education>
     <app-skills></app-skills>
     <app-contact></app-contact>
