@@ -34,7 +34,7 @@ export class Portfolio {
       summary:
         'Aplicación web para la gestión de restaurantes.',
       stack: ['Angular', 'Spring Boot', 'Oracle', 'PL/SQL', 'REST'],
-      url: 'https://github.com/',
+      url: 'https://m-j26.github.io/en-boca-de-todos/',
       accent: '#7dd3fc',
     },
 
