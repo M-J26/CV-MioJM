@@ -1,12 +1,24 @@
 {
   "header": {
-    "role": "Senior Full Stack Developer"
+    "role": "Desarrollador Full Stack Senior"
   },
   "menu": {
-    "about": "About",
-    "experience": "Experience",
-    "education": "Education",
-    "skills": "Skills",
-    "contact": "Contact"
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "education": "Educación",
+    "skills": "Habilidades",
+    "contact": "Contacto",
+    "downloadCV": "Descargar CV",
+    "cvSpanish": "CV Español",
+    "cvEnglish": "CV English",
+    "visits": "Visitas",
+    "visitorsTitle": "Visitantes por País",
+    "totalVisits": "Total de Visitas",
+    "uniqueCountries": "Países Únicos",
+    "countryName": "País",
+    "visitCount": "Visitas",
+    "percentage": "Porcentaje",
+    "topCountry": "Principal",
+    "noVisits": "No hay datos de visitantes aún"
   }
 }

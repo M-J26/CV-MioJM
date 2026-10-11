@@ -91,6 +91,49 @@
       <a href="#education" (click)="closeMenu()">Educación</a>
       <a href="#skills" (click)="closeMenu()">Habilidades</a>
       <a href="#contact" (click)="closeMenu()">Contacto</a>
+      
+      <!-- Sección de Descargas -->
+      <div class="menu-divider"></div>
+      <div class="menu-section">
+        <p class="menu-label">Descargar CV</p>
+        <button 
+          class="menu-btn download-btn"
+          (click)="downloadCV('es')"
+          [disabled]="downloadLoading()">
+          📥 {{ downloadLoading() ? 'Generando...' : 'CV Español' }}
+        </button>
+        <button 
+          class="menu-btn download-btn"
+          (click)="downloadCV('en')"
+          [disabled]="downloadLoading()">
+          📥 {{ downloadLoading() ? 'Generating...' : 'CV English' }}
+        </button>
+      </div>
+
+      <!-- Botón de Visitas -->
+      <div class="menu-divider"></div>
+      <button 
+        class="menu-btn visits-btn"
+        (click)="openVisitorModal(); closeMenu()">
+        👁️ Visitas: {{ visitorStats()?.totalVisits || 0 }}
+      </button>
+
+      <!-- Selector de Idioma -->
+      <div class="menu-divider"></div>
+      <div class="lang-switch">
+        <button 
+          class="lang-btn"
+          (click)="setLang('es')" 
+          [class.active]="activeLang === 'es'">
+          🇪🇸 Español
+        </button>
+        <button 
+          class="lang-btn"
+          (click)="setLang('en')" 
+          [class.active]="activeLang === 'en'">
+          🇬🇧 English
+        </button>
+      </div>
     </nav>
   }
 
@@ -108,6 +151,67 @@
 
       <!-- fondo para cerrar -->
       <div class="modal-background" (click)="closeModal()"></div>
+    </div>
+  }
+
+  <!-- MODAL DE VISITAS POR PAÍS -->
+  @if (visitorModalOpen()) {
+    <div class="visitor-modal">
+      <div class="visitor-modal-content">
+        <div class="visitor-modal-header">
+          <h2>📊 Visitantes por País</h2>
+          <button class="close-btn" (click)="closeVisitorModal()">✖</button>
+        </div>
+
+        @if (visitorStats() && visitorStats()!.totalVisits > 0) {
+          <div class="visitor-stats">
+            <div class="stats-summary">
+              <div class="stat-box">
+                <span class="stat-label">Total de Visitas</span>
+                <span class="stat-value">{{ visitorStats()!.totalVisits }}</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">Países Únicos</span>
+                <span class="stat-value">{{ visitorStats()!.uniqueCountries }}</span>
+              </div>
+            </div>
+
+            <div class="countries-list">
+              <h3>Desglose por País</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>País</th>
+                    <th>Visitas</th>
+                    <th>Porcentaje</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @for (location of visitorStats()!.locations; track location.countryCode) {
+                    <tr>
+                      <td class="country-name">
+                        {{ location.country }} 
+                        <span class="country-code">({{ location.countryCode }})</span>
+                      </td>
+                      <td class="visit-count">{{ location.count }}</td>
+                      <td class="percentage">
+                        {{ ((location.count / visitorStats()!.totalVisits) * 100).toFixed(1) }}%
+                      </td>
+                    </tr>
+                  }
+                </tbody>
+              </table>
+            </div>
+          </div>
+        } @else {
+          <div class="empty-state">
+            <p>No hay datos de visitantes aún</p>
+          </div>
+        }
+      </div>
+
+      <!-- fondo para cerrar -->
+      <div class="modal-background" (click)="closeVisitorModal()"></div>
     </div>
   }
 </header>

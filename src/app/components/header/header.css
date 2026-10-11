@@ -213,3 +213,290 @@ nav a:hover {
   background: rgba(125, 211, 252, 0.12);
   color: #a5f3fc;
 }
+
+/* ===== MENÚ MEJORADO ===== */
+.menu-divider {
+  width: 60%;
+  height: 1px;
+  background: rgba(125, 211, 252, 0.25);
+  margin: 0.5rem 0;
+}
+
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.menu-label {
+  font-size: 0.85rem;
+  color: #7dd3fc;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.menu-btn {
+  padding: 0.6rem 1.2rem;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #dbeafe;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.menu-btn:hover:not(:disabled) {
+  background: rgba(59, 130, 246, 0.25);
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.15);
+}
+
+.menu-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.download-btn {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.download-btn:hover:not(:disabled) {
+  background: rgba(34, 197, 94, 0.25);
+  border-color: rgba(34, 197, 94, 0.5);
+  box-shadow: 0 8px 16px rgba(34, 197, 94, 0.15);
+}
+
+.visits-btn {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.3);
+  font-size: 1.1rem;
+}
+
+.visits-btn:hover {
+  background: rgba(168, 85, 247, 0.25);
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 8px 16px rgba(168, 85, 247, 0.15);
+}
+
+.lang-btn {
+  padding: 0.5rem 1rem;
+  background: rgba(125, 211, 252, 0.1);
+  border: 1px solid rgba(125, 211, 252, 0.3);
+  color: #dbeafe;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+  background: rgba(125, 211, 252, 0.2);
+  border-color: rgba(125, 211, 252, 0.5);
+}
+
+.lang-btn.active {
+  background: rgba(125, 211, 252, 0.25);
+  color: #a5f3fc;
+  border-color: rgba(125, 211, 252, 0.6);
+}
+
+/* ===== MODAL DE VISITAS ===== */
+.visitor-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2, 6, 23, 0.82);
+  z-index: 1250;
+}
+
+.visitor-modal-content {
+  position: relative;
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  border-radius: 22px;
+  box-shadow: 0 28px 60px rgba(2, 6, 23, 0.7);
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  width: 90%;
+  padding: 2rem;
+}
+
+.visitor-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.2);
+}
+
+.visitor-modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #a5f3fc;
+}
+
+.visitor-modal-header .close-btn {
+  position: static;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+}
+
+/* ESTADÍSTICAS */
+.visitor-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stats-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.stat-box {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #7dd3fc;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #a5f3fc;
+}
+
+/* TABLA DE PAÍSES */
+.countries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.countries-list h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #a5f3fc;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.2);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+table thead {
+  background: rgba(125, 211, 252, 0.08);
+}
+
+table th {
+  padding: 0.75rem;
+  text-align: left;
+  color: #7dd3fc;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+}
+
+table td {
+  padding: 0.75rem;
+  color: #dbeafe;
+  border-bottom: 1px solid rgba(125, 211, 252, 0.1);
+}
+
+table tbody tr:hover {
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.country-name {
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.country-code {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: normal;
+}
+
+.visit-count {
+  font-weight: bold;
+  color: #22d3ee;
+  text-align: center;
+}
+
+.percentage {
+  color: #a78bfa;
+  text-align: right;
+  font-weight: 600;
+}
+
+/* ESTADO VACÍO */
+.empty-state {
+  text-align: center;
+  padding: 2rem;
+  color: #94a3b8;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .visitor-modal-content {
+    width: 95%;
+    padding: 1.5rem;
+    max-height: 85vh;
+  }
+
+  .stats-summary {
+    grid-template-columns: 1fr;
+  }
+
+  table {
+    font-size: 0.85rem;
+  }
+
+  table th,
+  table td {
+    padding: 0.5rem;
+  }
+
+  .visitor-modal-header h2 {
+    font-size: 1.2rem;
+  }
+}

@@ -1,5 +1,5 @@
 
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { Header } from './components/header/header';
 import { About } from './components/about/about';
 import { Experience } from './components/experience/experience';
@@ -8,6 +8,7 @@ import { Education } from './components/education/education';
 import { Skills } from './components/skills/skills';
 import { Contact } from './components/contact/contact';
 import { TRANSLATION_IMPORTS } from './shared/transloco.shared';
+import { VisitorAnalyticsService } from './shared/services/visitor-analytics.service';
 
 @Component({
   selector: 'app-root',
@@ -27,4 +28,7 @@ import { TRANSLATION_IMPORTS } from './shared/transloco.shared';
 export class App {
   protected readonly title = signal('CV-JM');
   readonly views = signal(128);
+
+  // Inyectar servicio de análisis para inicializarlo automáticamente
+  private readonly visitorAnalytics = inject(VisitorAnalyticsService);
 }
